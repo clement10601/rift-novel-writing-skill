@@ -28,7 +28,7 @@
 - 每幾章至少出現一次：3
 
 ## 檢查程式
-- novel-check.json（同資料夾）
+- novel-check.json、timeline.json（同資料夾，時間線只填了部分章節當示範）
 
 ## 發布與交接
 - 網站 repo 的 content/lore/chNN.md，front matter 有 title、date、cover、coverAlt、summary；開 draft PR，作者自己合併

@@ -1,0 +1,97 @@
+{
+  "characters": [
+    {
+      "id": "kyle",
+      "name": "凱爾",
+      "age": 22,
+      "ageDay": 0
+    },
+    {
+      "id": "liese",
+      "name": "莉潔",
+      "age": 19,
+      "ageDay": 0
+    }
+  ],
+  "cycles": [
+    {
+      "name": "巴爾德補封霜",
+      "every": 9,
+      "startDay": 25
+    }
+  ],
+  "events": [
+    {
+      "id": "e0",
+      "chapter": 1,
+      "day": 0,
+      "title": "鐘響",
+      "chars": [
+        "kyle",
+        "liese"
+      ],
+      "ages": {
+        "kyle": 22
+      }
+    },
+    {
+      "id": "e1",
+      "chapter": 4,
+      "day": 18,
+      "title": "封印",
+      "chars": [
+        "kyle"
+      ],
+      "causedBy": [
+        "e0"
+      ]
+    },
+    {
+      "id": "e2",
+      "chapter": 5,
+      "day": 25,
+      "title": "灰燼騎士",
+      "causedBy": [
+        "e1"
+      ]
+    },
+    {
+      "id": "e2b",
+      "chapter": 6,
+      "day": 32,
+      "title": "灰燼渡換屍體",
+      "chars": [
+        "kyle",
+        "liese"
+      ],
+      "causedBy": [
+        "e1"
+      ]
+    },
+    {
+      "id": "e3",
+      "chapter": 7,
+      "day": 39,
+      "title": "晶卵",
+      "chars": [
+        "kyle"
+      ],
+      "causedBy": [
+        "e2"
+      ]
+    },
+    {
+      "id": "e4",
+      "chapter": 8,
+      "day": 44,
+      "title": "夜市",
+      "chars": [
+        "kyle",
+        "liese"
+      ],
+      "causedBy": [
+        "e3"
+      ]
+    }
+  ]
+}

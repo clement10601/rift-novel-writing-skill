@@ -14,8 +14,11 @@ novel-check.json 可覆寫的欄位（都可省略）：
     "soft_per_k": {"像": 2.0},            # 每千字建議值，超過只提醒
     "flip_max": 3,                        # 「不是…是…」每章上限
     "signals_extra": ["停了一下"],         # 加進套話訊號的作者口癖
-    "banned": ["參考作品的國名"]            # 一出現就失敗
+    "banned": ["參考作品的國名"],           # 一出現就失敗
+    "meta_words": ["本章目標", "TODO"]      # 寫作說明漏進正文，一出現就失敗
   }
+
+另外固定檢查：最後一段沒有句末標點（可能寫到一半斷掉）。
 """
 import argparse
 import json
@@ -30,6 +33,7 @@ DEFAULTS = {
     "flip_max": 3,
     "signals_extra": [],
     "banned": [],
+    "meta_words": ["本章目標", "伏筆：", "TODO", "待補", "（注：", "[說明]", "【說明】"],
 }
 WEAK = ["微微", "淡淡", "緩緩", "輕輕", "默默", "悄然", "隱隱", "一絲", "一抹", "慢慢"]
 SIGNALS = [
@@ -98,6 +102,16 @@ def check(path, cfg):
     hits = [(w, text.count(w)) for w in words if w in text]
     if hits:
         print("  ? 套話訊號（回上下文判斷）：" + "、".join(f"{w}×{c}" for w, c in hits))
+
+    leaks = [w for w in cfg["meta_words"] if w in text]
+    if leaks:
+        print("  ✗ 寫作說明漏進正文：" + "、".join(leaks))
+        ok = False
+
+    paras = [p.strip() for p in text.split("\n") if p.strip() and p.strip() != "---"]
+    if paras and not re.search(r"[。！？」』…）\)*_]$", paras[-1]):
+        print(f"  ✗ 最後一段沒有收尾標點，可能斷掉：{paras[-1][-20:]}")
+        ok = False
 
     banned = [w for w in cfg["banned"] if w.lower() in text.lower()]
     if banned:

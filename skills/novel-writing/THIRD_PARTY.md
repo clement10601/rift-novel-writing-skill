@@ -1,13 +1,17 @@
-# 參考來源
+# 參考來源與第三方內容
 
-這個技能是我們自己寫的，最早用在《裂谷鐘聲》上，之後整理成通用版。下面幾個公開專案提供了部分檢查項目的想法；沒有複製它們的文字或程式碼，所有內容都用自己的話重寫，並改成通用的版本。
+本技能以 GPL-3.0 授權（見 repo 根目錄 `LICENSE`）。內容分兩種：
 
-| 專案 | 授權 | 參考了什麼 |
-|---|---|---|
-| leenbj/novel-creator-skill | MIT | 「一章最多一件大事」的節奏檢查、套話詞清單的分類方式 |
-| xindoo/sumeru | MIT | 發布前的撞名與原作名稱檢查、時間線換算 |
-| zenstory-ai/oh-story-claudecode | MIT | 套話訊號要回到上下文判斷、因果與資訊邊界的檢查問題 |
-| lingfengQAQ/webnovel-writer | GPL-3.0 | 只參考想法：多條故事線輪替、同場角色名字要好分辨。未使用其任何文字或程式碼。 |
-| PenglongHuang/chinese-novelist-skill | MIT | 事實登記表、資訊邊界、章節摘要的做法 |
+1. **我們自己寫的**：`SKILL.md`、`references/*.md`（library 以外）、`scripts/*.py`。參考了下列專案的想法，全部用自己的話重寫。
+2. **第三方原文**：`references/library/` 底下，內文未修改，只在開頭加一行來源註記。來源、授權與收錄版本列在 `references/library/README.md`，授權全文在 repo 根目錄 `licenses/`。
 
-未採用：強制每章結尾懸念、固定字數下限、網文平台格式、需要外部 API 金鑰的檢索與生成腳本、會修改瀏覽器或系統設定的工具。
+| 專案 | 授權 | 想法用在哪裡 | 收錄原文 |
+|---|---|---|---|
+| leenbj/novel-creator-skill | MIT | 一章一件大事、事件冷卻、拍子表、大綱錨點、兩遍潤稿、每十章體檢、改綱級聯、開書五問 | 4 份 |
+| xindoo/sumeru | MIT | 撞名與原作名稱檢查、時間線驗算、拆書不抄書、EPUB 匯出 | 2 份 |
+| zenstory-ai/oh-story-claudecode | MIT | 套話要回上下文判斷、因果與資訊邊界、修改權限分級、大綱四問、揭露帳本、正文斷尾檢查 | 9 份 |
+| lingfengQAQ/webnovel-writer | GPL-3.0 | 多線輪替、名字與口吻差異 | 4 份 |
+| PenglongHuang/chinese-novelist-skill | MIT | 事實登記表、資訊邊界、章節摘要 | 無 |
+| ExplosiveCoderflome/AI-Novel-Writing-Assistant | AGPL-3.0 與商業雙授權 | 只參考產品構想（角色庫、世界觀庫、拆書），沒有使用任何文字或程式碼 | 無 |
+
+沒有收錄：會呼叫外部 API 或需要金鑰的腳本、排行榜爬蟲、瀏覽器自動化、會寫入 Claude Code 設定的 hooks、封面生圖。
