@@ -12,6 +12,7 @@
 | zenstory-ai/oh-story-claudecode | MIT | 套話要回上下文判斷、因果與資訊邊界、修改權限分級、大綱四問、揭露帳本、正文斷尾檢查 | 9 份 |
 | lingfengQAQ/webnovel-writer | GPL-3.0 | 多線輪替、名字與口吻差異 | 4 份 |
 | PenglongHuang/chinese-novelist-skill | MIT | 事實登記表、資訊邊界、章節摘要 | 無 |
+| pin0513/de-ai-flavor（gist） | 未標示授權 | 去 AI 味的檢查項目（否定翻轉、資訊密度、沒有後果的停頓、不替作者編經驗、風格錨）。只用想法，改寫成小說版 `references/de-ai-flavor.md`，沒有收錄原文 | 無 |
 | ExplosiveCoderflome/AI-Novel-Writing-Assistant | AGPL-3.0 與商業雙授權 | 只參考產品構想（角色庫、世界觀庫、拆書），沒有使用任何文字或程式碼 | 無 |
 
 沒有收錄：會呼叫外部 API 或需要金鑰的腳本、排行榜爬蟲、瀏覽器自動化、會寫入 Claude Code 設定的 hooks、封面生圖。
