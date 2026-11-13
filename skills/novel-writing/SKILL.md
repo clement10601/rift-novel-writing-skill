@@ -19,6 +19,7 @@ description: 寫、續寫、改稿、審稿中文連載小說時使用，也用�
 |---|---|
 | 開新書、開新卷、改大綱 | `references/planning.md` |
 | 寫完一章 | `references/self-check.md` |
+| 寫完一章、自檢之後；整本重看文字 | `references/de-ai-flavor.md` |
 | 改稿、潤稿、每十章體檢 | `references/revision.md` |
 | 想學某本書的結構 | `references/deconstruct.md` |
 | 某個主題要查更細的做法 | `references/library/README.md`（第三方原文，依主題索引） |
@@ -39,7 +40,7 @@ description: 寫、續寫、改稿、審稿中文連載小說時使用，也用�
 1. **對照**：讀事實登記表的時間線、資訊邊界、上一章的結尾型態、還沒兌現的伏筆。寫下這章要推進的那一件大事（見自檢第 1 節）。
 2. **拍子表**：照 `references/planning.md` 第 4 節列 4 到 8 拍，每拍一個場景的進展。
 3. **寫正文**：照設定檔的檔名格式與章首格式存檔。章內換場用設定檔指定的分隔符。
-4. **自檢**：跑 `python3 scripts/check_chapter.py --config <專案>/novel-check.json <章節檔>`（沒有設定檔就省略 `--config`），再照 `references/self-check.md` 人工看一遍。
+4. **自檢**：跑 `python3 scripts/check_chapter.py --config <專案>/novel-check.json <章節檔>`（沒有設定檔就省略 `--config`），再照 `references/self-check.md` 人工看一遍，最後照 `references/de-ai-flavor.md` 過一次文字。
 5. **登記**：在事實登記表新增這章一節：日期、新名字、新數字、資訊邊界變化、結尾型態。新名詞進用詞表。有建時間線檔的話，把這章的事件加進去，跑 `python3 scripts/check_timeline.py <timeline.json>`。另外在摘要檔補這章三到五行摘要。
 6. **周邊**：設定檔列了每章要附的檔案（預告、社群貼文、插圖需求等）就照做。
 7. **交接**：設定檔有翻譯或其他下游，通知它們；之後改稿要列出改了哪幾句。

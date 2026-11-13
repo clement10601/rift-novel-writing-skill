@@ -2,8 +2,8 @@
   "hard": {"很久": 3},
   "per_k": {"弱化副詞": 1.0},
   "soft_per_k": {"像": 2.0},
-  "flip_max": 3,
-  "signals_extra": ["停了一下", "看了很久", "聲音很平", "張開嘴，又閉上"],
+  "flip_max": 1,
+  "signals_extra": ["停了一下", "聲音很平", "張開嘴，又閉上"],
   "banned": [
     "Fantasy Earth", "ファンタジーアース",
     "Netzawar", "ネツァワル", "Hordaine", "ホルデイン",

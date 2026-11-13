@@ -12,7 +12,7 @@ novel-check.json 可覆寫的欄位（都可省略）：
     "hard":    {"很久": 3},              # 每章次數上限，超過算失敗
     "per_k":   {"弱化副詞": 1.0},         # 每千字上限，超過算失敗
     "soft_per_k": {"像": 2.0},            # 每千字建議值，超過只提醒
-    "flip_max": 3,                        # 「不是…是…」每章上限
+    "flip_max": 1,                        # 「不是…是…」每章上限
     "signals_extra": ["停了一下"],         # 加進套話訊號的作者口癖
     "banned": ["參考作品的國名"],           # 一出現就失敗
     "meta_words": ["本章目標", "TODO"]      # 寫作說明漏進正文，一出現就失敗
@@ -30,7 +30,7 @@ DEFAULTS = {
     "hard": {},
     "per_k": {"弱化副詞": 1.0},
     "soft_per_k": {"像": 2.0},
-    "flip_max": 3,
+    "flip_max": 1,
     "signals_extra": [],
     "banned": [],
     "meta_words": ["本章目標", "伏筆：", "TODO", "待補", "（注：", "[說明]", "【說明】"],
@@ -42,6 +42,7 @@ SIGNALS = [
     "心頭一震", "心中暗道", "眉頭微皺", "宛如", "猶如", "彷彿", "這意味著", "終於明白",
     "從這一刻開始", "注定", "殊不知", "他不知道的是", "她不知道的是", "從而", "因而",
     "誠然", "於是乎", "綜上所述",
+    "看了很久", "過了很久", "想了很久", "這輩子", "這讓", "這使",
 ]
 
 
@@ -76,7 +77,7 @@ def check(path, cfg):
     ok = True
     print(f"== {path.name}  漢字 {n}")
 
-    flips = len(re.findall(r"不是[^。！？\n]{1,30}?[，,]\s*(?:而)?是", text))
+    flips = len(re.findall(r"不是[^。！？\n]{1,30}?[，,。]\s*(?:而|那)?是", text))
     bad = flips > cfg["flip_max"]
     print(f"  {'✗' if bad else '✓'} 不是…是…: {flips}（上限 {cfg['flip_max']}）")
     ok = ok and not bad
